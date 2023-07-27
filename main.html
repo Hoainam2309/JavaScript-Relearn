@@ -220,7 +220,7 @@
       <hr><br>
       <hr><br>
       <hr><br>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" id="display" style="display: block;">
         <div class="card w50">
           <h3 class="card-header bg-danger text-white">Tinh tien Xe</h3>
           <div class="card-body">
@@ -258,6 +258,26 @@
             <button class="btn btn-success" id="btnIn">In hóa đơn</button>
           </div>
         </div>
+      </div>
+      <div id="printDiv" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>loại xe</th>
+              <th>số km</th>
+              <th>thời gian chờ</th>
+              <th>tổng tiền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>loại grabcar</td>
+              <td>1</td>
+              <td>1</td>
+              <td>14.000</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <hr>
       <hr>

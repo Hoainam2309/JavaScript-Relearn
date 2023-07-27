@@ -301,32 +301,35 @@ function changeSize(id,fontSize) {
     //cách 1: dùng switch
     switch(loaiXe){
         case "grabCar": {
-            if (soKM = 1 ){
-                tongTien = 8000 + thoiGian * 2000;
-            }else if (soKM > 1 && soKM <= 19) {
-                tongTien = 7500 * soKM + thoiGian * 2000;
+            // if (soKM = 1 ){
+            //     tongTien = 8000 + thoiGian * 2000;
+            // }else if (soKM > 1 && soKM <= 19) {
+            //     tongTien = 7500 * soKM + thoiGian * 2000;
 
-            }else if (soKM > 19) {
-                tongTien = 7000 * soKM + thoiGian * 2000;
-            }
+            // }else if (soKM > 19) {
+            //     tongTien = 7000 * soKM + thoiGian * 2000;
+            // }
+           tongTien =  tinhTongTien(8000,7500,7000,2000);
         };break;
         case 'grabSUV': {
-            if(soKM = 1) {
-                tongTien = 9000 + thoiGian *3000;
-            }else if (soKM > 1 && soKM <= 19) {
-                tongTien = 8500 * soKM + thoiGian * 3000;
-            }else if (soKM > 19) {
-                tongTien = 8000 * soKM + thoiGian * 3000;
-            }
+            // if(soKM = 1) {
+            //     tongTien = 9000 + thoiGian *3000;
+            // }else if (soKM > 1 && soKM <= 19) {
+            //     tongTien = 8500 * soKM + thoiGian * 3000;
+            // }else if (soKM > 19) {
+            //     tongTien = 8000 * soKM + thoiGian * 3000;
+            // }
+            tongTien = tinhTongTien(9000,8500,8000,2000);
         };break;
         case 'grabBlack':{
-            if (soKM = 1) {
-                tongTien = 10000 + thoiGian * 3500;
-            }else if (soKM > 1 && soKM <= 19) {
-                tongTien = 9500 * soKM + thoiGian * 3500;
-            }else if (soKM > 19) {
-                tongTien = 9000 * soKM + thoiGian * 3500;
-            }
+            // if (soKM = 1) {
+            //     tongTien = 10000 + thoiGian * 3500;
+            // }else if (soKM > 1 && soKM <= 19) {
+            //     tongTien = 9500 * soKM + thoiGian * 3500;
+            // }else if (soKM > 19) {
+            //     tongTien = 9000 * soKM + thoiGian * 3500;
+            // }
+            tongTien = tinhTongTien(10000,9500,9000,2000);
         };break;
         default: {
             console.log('chọn lại loại xe dùm đi ba :3')
@@ -337,6 +340,23 @@ function changeSize(id,fontSize) {
     document.getElementById('tienXe').innerHTML = tongTien + 'VNĐ';
 
 
+ }
+ function tinhTongTien (tien1KM,tienNhoHon19km,tienLonHon19km,tienCho) {
+       if (soKM = 1 ){
+                tongTien = tien1KM + thoiGian * tienCho;
+            }else if (soKM > 1 && soKM <= 19) {
+                tongTien = tienNhoHon19km * soKM + thoiGian * tienCho;
+
+            }else if (soKM > 19) {
+                tongTien = tienLonHon19km * soKM + thoiGian * tienCho;
+            }
+            return tongTien;
+ }
+
+ document.getElementById('btnIn').onclick = function () {
+    document.getElementById('display').style.display = 'none';
+    document.getElementById('printDiv').style.display = 'block';
+    window.print();
  }
 
 

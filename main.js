@@ -220,3 +220,124 @@ btnDocSo.onclick = function () {
 document.getElementById('ketQuaSo').innerHTML = result;
 
 }
+
+let txt1 = document.getElementById('text1');
+txt1.innerHTML = 'hello ';
+txt1.style.color = 'red';
+
+let txt3 = document.getElementById('text3');
+txt3.innerHTML = 'hello';
+txt3.style.color = 'blue';
+
+let txt4 = document.getElementById('text4');
+txt4.innerHTML = 'hello';
+txt4.style.color = 'violet';
+
+
+function handleChange (id,content,color) {
+    let txt1 = document.getElementById(id);
+    txt1.innerHTML = content;
+    txt1.style.color = color;
+}
+
+handleChange('text1','hello','red');
+handleChange('text3','hello','blue');
+handleChange('text4','hello','violet');
+
+
+let btnUp = document.getElementById('btnUp');
+
+btnUp.onclick = function() {
+    changeSize('fa', 10)
+}
+let btnDown = document.getElementById('btnDown');
+
+btnDown.onclick = function() {
+    changeSize('fa', -10)
+}
+
+
+function changeSize(id,fontSize) {
+    let size = document.getElementById(id).style.fontSize;
+    console.log(size)
+    size = Number(size.replace('px',''));
+    console.log(size)
+    size += fontSize;
+
+    document.getElementById(id).style.fontSize = size + 'px';
+
+
+
+} 
+
+// tính tiền  xe
+
+ let loaiXe = '';
+ let soKM = 0;
+ let thoiGian = 0;
+
+
+ document.getElementById('grabCar').onclick = function() {
+    loaiXe = document.getElementById('grabCar').id;
+    console.log(loaiXe)
+ }
+ document.getElementById('grabSUV').onclick = function ()
+ {
+    loaiXe = document.getElementById('grabSUV').id;
+    console.log(loaiXe)
+ }
+
+ document.getElementById('grabBlack').onclick = function(){
+    loaiXe = document.getElementById('grabBlack').id;
+    console.log(loaiXe)
+ }
+ let tongTien = 0;
+
+
+ document.getElementById('btnTienXe').onclick = function () {
+    soKM = Number(document.getElementById('soKM').value);
+    thoiGian = Number(document.getElementById('thoiGian').value);
+
+    //cách 1: dùng switch
+    switch(loaiXe){
+        case "grabCar": {
+            if (soKM = 1 ){
+                tongTien = 8000 + thoiGian * 2000;
+            }else if (soKM > 1 && soKM <= 19) {
+                tongTien = 7500 * soKM + thoiGian * 2000;
+
+            }else if (soKM > 19) {
+                tongTien = 7000 * soKM + thoiGian * 2000;
+            }
+        };break;
+        case 'grabSUV': {
+            if(soKM = 1) {
+                tongTien = 9000 + thoiGian *3000;
+            }else if (soKM > 1 && soKM <= 19) {
+                tongTien = 8500 * soKM + thoiGian * 3000;
+            }else if (soKM > 19) {
+                tongTien = 8000 * soKM + thoiGian * 3000;
+            }
+        };break;
+        case 'grabBlack':{
+            if (soKM = 1) {
+                tongTien = 10000 + thoiGian * 3500;
+            }else if (soKM > 1 && soKM <= 19) {
+                tongTien = 9500 * soKM + thoiGian * 3500;
+            }else if (soKM > 19) {
+                tongTien = 9000 * soKM + thoiGian * 3500;
+            }
+        };break;
+        default: {
+            console.log('chọn lại loại xe dùm đi ba :3')
+        }
+    }
+    console.log(tongTien)
+
+    document.getElementById('tienXe').innerHTML = tongTien + 'VNĐ';
+
+
+ }
+
+
+

@@ -1,64 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div class="container" style="margin-bottom: 500px;">
+    <div class="container" style="margin-bottom: 500px">
+      <h3>Bai tap quan ly sinh vien</h3>
       <div class="row">
         <div class="col-6">
-          <h3 class="text-center">Điền thông tin sinh viên</h3>
           <div class="form-group">
-            <p>Mã sinh viên</p>
-            <input id="maSinhVien" class="form-control">
+            <p>Mã Sinh Viên</p>
+            <input class="form-control" id="maSinhVien" />
           </div>
           <div class="form-group">
-            <p>Tên sinh viên</p>
-            <input id="tenSinhVien" class="form-control">
+            <p>Email</p>
+            <input class="form-control" id="email" />
           </div>
           <div class="form-group">
-            <p>Loại sinh viên</p>
-            <select  id="loaiSinhVien" class="form-control">
-              <option >Khó khăn</option>
-              <option >bình thường</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <p>Diểm toán</p>
-            <input id="diemToan" class="form-control">
-          </div>
-          <div class="form-group">
-            <p>Diểm văn</p>
-            <input id="diemVan" class="form-control">
-          </div>
-          <div class="form-group">
-            <button class="btn btn-success" id="xuatThongTin">Let go Boy</button>
+            <p>Ngày Sinh</p>
+            <input class="form-control" id="ngaySinh" />
           </div>
         </div>
         <div class="col-6">
-          <h3>Thông tin sinh viên</h3>
-          <div class="alert alert-success" id="txtTen">Tên Sinh Viên <span class="txtTenSinhVien"></span></div>
-          <div class="alert alert-success"id="txtMa">Mã Sinh Viên <span class="txtMaSinhVien"></span></div>
-          <div class="alert alert-success"id="txtLoai">Loại Sinh Viên <span class="txtLoaiSinhVien"></span></div>
-          <div class="alert alert-success"id="txtDiemTB">Điểm Trung Bình <span class="txtDiemTrungBinh"></span></div>
-          <div class="alert alert-success" id="txtXepLoai">Xếp Loại <span class="txtXepLoai"></span></div>
+          <div class="form-group">
+            <p>Tên Sinh Viên</p>
+            <input class="form-control" id="tenSinhVien" />
+          </div>
+          <div class="form-group">
+            <p>Mật Khẩu</p>
+            <input type="password" class="form-control" id="matKhau" />
+          </div>
+          <div class="form-group">
+            <p>Khóa Học</p>
+            <select id="khoaHoc" class="form-control">
+              <option value="FrontEnd">FE</option>
+              <option value="BackEnd">BE</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 mt-2 row">
+          <div class="col-4">
+            <p>Điểm Toán</p>
+            <input class="form-control" id="diemToan" />
+          </div>
+          <div class="col-4">
+            <p>Diểm Lý</p>
+            <input class="form-control" id="diemLy" />
+          </div>
+          <div class="col-4">
+            <p>Điểm Hóa</p>
+            <input class="form-control" id="diemHoa" />
+          </div>
+        </div>
+        <div class="col-12 mt-2 mb-4">
+          <button class="btn btn-success" id="btnThemSinhVien">
+            Add Student
+          </button>
+          <button class="btn btn-success" id="btnCapNhapSinhVien">
+            Update
+          </button>
+        </div>
+        <div class="form-group mt-2">
+          <div class="input-group">
+            <input id="tuKhoa" class="form-control" />
+            <button class="btn btn-success">Tìm Kiếm</button>
+          </div>
         </div>
       </div>
+      <div class="mt-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Ma Sinh Vien</th>
+              <th>Ten Sinh Vien</th>
+              <th>Email</th>
+              <th>Ngay Sinh</th>
+              <th>Khoa Hoc</th>
+              <th>Diem Trung Binh</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tblSinhVien">
+            <tr>
+              <td>01</td>
+              <td>Nguyen Van a</td>
+              <td>email@gmail.com</td>
+              <td>11/01/1999</td>
+              <td>FE</td>
+              <td>8.0</td>
+              <td>
+                <!-- <button id="xoaBTN" class="btn btn-danger">Xóa</button>
+                    <button id="suaBTN" class="btn btn-primary">Sửa</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-      
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   <!--model js trc main-->
-   <script src="./models/SinhVien.js"></script>
-    <script src="./main.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!--model js trc main-->
+
+    <script src="./models/SinhVien.js"></script>
+    <script src="./controllers/main.js"></script>
+  </body>
 </html>

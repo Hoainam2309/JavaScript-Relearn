@@ -1,29 +1,18 @@
 function SinhVien() {
-    this.maSinhVien = '';
-    this.hoten = '';
-    this.loaiSinhVien = '';
+    this.maSinhVien = 0;
+    this.tenSV = "";
+    this.email = '';
+    this.matKhau = '';
+    this.ngaySinh = 0;
+    this.khoaHoc = '';
     this.diemToan = 0;
-    this.diemVan = 0;
-    diemTrungBinh = function() {
-        let dTB = 0;
-        dTB = (Number(this.diemToan) + Number(this.diemVan)) / 2
-        return dTB
+    this.diemLy =0;
+    this.diemHoa = 0;
+    this.diemTrungBinh = function() {
+        let dtb = 0;
+            dtb = (Number(this.diemToan) + Number(this.diemLy)+ Number(this.diemHoa)) / 3;
+        return dtb;
     };
-    xepLoai = function () {
-    
-        let diemTB = this.diemTrungBinh();
-        let xepLoai = '';
-        if(diemTB >= 5) {
-            xepLoai = 'pass';
-        }else {
-            xepLoai = 'cut';
-        }
-        return xepLoai;
-    };
+   
 }
 
-let sinhVien1 = new SinhVien();
-console.log(sinhVien1);
-
-let sinhVien3 = new SinhVien();
-console.log(sinhVien3);

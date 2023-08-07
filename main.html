@@ -5,268 +5,60 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <div class="container">
-        <p id="txt">hello ửold</p>
-        <input id="iText" class="form-control w-19" value ='cyber' />
-        <img src="https://picsum.photos/id/1/200" alt="..." id="img">
-        <br>
-        <button class="btn btn-success" onclick="handleClick()"> click to me</button>
-        <hr>
-        <h2>bai tap  thay doi noi dung cua the</h2>
-        <h3 id="h3Text">JavaScript tai nha that dinh</h3>
-        <p id="ptext">noi dung truoc thay doi</p>
-        <button class=" btn btn-success" id="btn" onclick="clickMe()">click me</button>
-        <hr>
-        <hr>
-        <h3>vi du 2: thay doi noi dung va css cua the nhu sau</h3>
-        <div class="alert alert-warning">
-        <p>an noi dung cua the p di</p>
-        <p>thay doi noi dung the h3 thanh cybesoft fe</p>
-        <p>cho the h3 co bg mau cam</p>
-        <p>cho the h3 1 vien border 1px</p>
-        <p>lam mo the h3 voi opacity 0.5</p>
-      </div>
-      <h3 id="h3Vidu">hoc fe tai nha that dinh</h3>
-      <p id="viDu">noi dung thay doi</p>
-      <button id="lamMo" ">lam mo nao</button>
-      <hr>
-      <hr>
-      <h3>bai tap tinh tien tip</h3>
-      <div class="d-flex justify-content-center">
-        <div class="card w50">
-          <h3 class="card-header bg-danger text-white">Tinh tien TIP</h3>
-          <div class="card-body">
-            <div class="form-group">
-              <p>Tong Tien</p>
-              <input class="form-control" id="tongTienNhanVien">
-            </div>
-            <div class="group">
-              <p>Phan Tram</p>
-              <select class="form-control" id="phanTranTip">
-                <option value="30">Rat tot</option>
-                <option value="20"> tot</option>
-                <option value="15">on</option>
-                <option value="10">toi</option>
-                <option value="5">te</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <p>so nhan vien TIP</p>
-              <input class="form-control" id="soNhanVienTip" />
-            </div>
+    <div class="container" style="margin-bottom: 500px;">
+      <div class="row">
+        <div class="col-6">
+          <h3 class="text-center">Điền thông tin sinh viên</h3>
+          <div class="form-group">
+            <p>Mã sinh viên</p>
+            <input id="maSinhVien" class="form-control">
           </div>
-          <div class="card-footer text-canter">
-            <h3>so tienb tip/ nhan vien</h3>
-            <p id="tienTip">0$</p>
-            <button class="btn btn-success" id="btnTinh">tinh tien</button>
+          <div class="form-group">
+            <p>Tên sinh viên</p>
+            <input id="tenSinhVien" class="form-control">
+          </div>
+          <div class="form-group">
+            <p>Loại sinh viên</p>
+            <select  id="loaiSinhVien" class="form-control">
+              <option >Khó khăn</option>
+              <option >bình thường</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Diểm toán</p>
+            <input id="diemToan" class="form-control">
+          </div>
+          <div class="form-group">
+            <p>Diểm văn</p>
+            <input id="diemVan" class="form-control">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success" id="xuatThongTin">Let go Boy</button>
           </div>
         </div>
-      </div>
-      <hr>
-      <hr>
-      <div class="container" style="margin-bottom: 500px">
-        <h3>ví dụ: tính trị tuyệt đối của 1 số</h3>
-        <div class="fofrm-group">
-          <p>nhập vào 1 số</p>
-          <input class="form-control w-19" id="number1">
-          <button class="btn btn-success mt-3" id="tinhTri">click to cal</button>
+        <div class="col-6">
+          <h3>Thông tin sinh viên</h3>
+          <div class="alert alert-success" id="txtTen">Tên Sinh Viên <span class="txtTenSinhVien"></span></div>
+          <div class="alert alert-success"id="txtMa">Mã Sinh Viên <span class="txtMaSinhVien"></span></div>
+          <div class="alert alert-success"id="txtLoai">Loại Sinh Viên <span class="txtLoaiSinhVien"></span></div>
+          <div class="alert alert-success"id="txtDiemTB">Điểm Trung Bình <span class="txtDiemTrungBinh"></span></div>
+          <div class="alert alert-success" id="txtXepLoai">Xếp Loại <span class="txtXepLoai"></span></div>
         </div>
-        <div id="ketQuaCal" class="alert alert-success"></div>
+      </div>
+    </div>
       
-      </div>
-      <hr>
-      <hr>
-      <h3> ví dụ : cho phép người dùng nhập vào hai số => in ra số lớn nhất</h3>
-      <div class="form-group row">
-        <div class="col-4">
-          <p>nhập số thứ nhất</p>
-          <input  class="form-control" id="soMot">
-        </div>
-        <div class="col-4">
-          <p>nhập số thứ hai</p>
-          <input  class="form-control" id="soHai">
-        </div>
-        <div class="mt-3 form-group">
-          <button class="btn btn-success" id="btnInMax">
-            In nào
-          </button>
-        </div>
-        <div id="ketQuaMax" class="mt alert alert-success"></div>
-      </div>
-      <h3 class="alert alert-warning"> ví dụ: nhập điểm toán lý hóa=> tính điểm trung bình</h3>
-      <p class="alert alert-primary">
-        dtb bé hơn 5: in ra học lực yếu <br>
-        dtb lớn hơn = 5 và bé hơn 6.5: hl trung bình <br>
-        dtb > 6.5 và bé hơn 8: hl khá <br>
-        dtb > 8 và bé hơn 10: hl giỏi
-      </p>
-
-      <div class="mt-3 form-group row">
-        <div class="col-4">
-          <p>toán</p>
-          <input  class="form-control" id="toan">
-        </div>
-        <div class="col-4">
-          <p>lý</p>
-          <input  class="form-control" id="ly">
-        </div>
-        <div class="col-4">
-          <p>hóa</p>
-          <input  class="form-control" id="hoa">
-        </div>
-        <div class="mt-3 form-group">
-        <button class=" btn btn-success" id="clickToTinh">Tính Điểm</button>
-        </div>
-        <div class="alert alert-primary" id="ketQuaDTB"></div>
-      </div>
-      <hr>
-      <hr>
-      <p class="alert alert-success">
-        -ví dụ người dùng nhập : 40h và lương 100
-        <br> tiền luong: 400
-        <br> 45h và 100 luong
-        <br> tiền lương : 400 + (5 * 1.5 * 100)
-      </p>
-      <div class="mt-3 form-group row">
-        <div class="col-4">
-          <p>nhập giờ làm</p>
-          <input id="soGioLam" class="form-control">
-        </div>
-        <div class="col-4">
-          <p>nhập lương</p>
-          <input id="Luong" class="form-control">
-        </div>
-      </div>
-      <div class="mt-3 form-group">
-        <button class="btn btn-success" id="tinhLuong">Tính lương</button>
-      </div>
-      <div class="alert alert-primary" id="ketQuaLuong"></div>
-      <hr>
-      <hr>
-      <div class="alert alert-success">
-        <p>sl bé hơn hay bằng 50 : tổng = sl * đơn giá</p>
-        <p>sl > 50 hay bé hơn = 100: tổng = sl * đơn giá giảm 8%</p>
-        <p>sl > 100 : tổng sl * đơn giá giảm 1%</p>
-      </div>
-      <div class="mt-3 form-group row">
-        <div class="col-4">
-          <p>tên sản phẩm</p>
-          <input id="tenSp" class="form-control">
-        </div>
-        <div class="col-4">
-          <p>số lượng</p>
-          <input id="soLuong" class="form-control">
-        </div>
-        <div class="col-4">
-          <p>đơn giá</p>
-          <input id="donGia" class="form-control">
-        </div>
-      </div>
-      <div class="mt-3 form-group">
-        <button class="btn btn-success" id="tinhPhanTram">Tính</button>
-      </div>
-      <div class="alert alert-success" id="KetQuaGia"></div>
-      <hr>
-      <hr>
-      <div class="alert alert-primary">
-        <p>nhập số n từ 1 -> 4 in ra chữ nếu ko có thì số ko hợp lệ</p>
-
-        <div class="mt-3 form-group">
-          <div class="col-4">
-            <p>số n</p>
-            <input class="form-control" id="nhapSoDi">
-          </div>
-          <div class="mt-3 form-group">
-            <button class="btn btn-success" id="btnDocSo">Đọc số</button>
-          </div>
-          <div class="alert alert-success" id="ketQuaSo"></div>
-        </div>
-      </div>
-      <p>hello</p>
-      <hr>
-      <hr>
-      <p>baì tập:thay đổi màu sắc 3 đoạn text</p>
-      <section id="text1">text1</section>
-      <div id="text3">text3</div>
-      <article id="text4">text4</article>
-      <hr>
-      <hr>
-      <h3>tăng giảm kích thước nhà và đoạn văn bản sau</h3>
-        <div class="form-group">
-          <i class="fa-solid fa-house" style="font-size:199px;" id="fa"></i>
-          <button class="btn btn-success mt-3" id="btnUp">+</button>
-          <button class="btn btn-success mt-3" id="btnDown">-</button>
-        </div>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <hr><br>
-      <div class="d-flex justify-content-center">
-        <div class="card w50">
-          <h3 class="card-header bg-danger text-white">Tinh tien Xe</h3>
-          <div class="card-body">
-            <h2>vui lòng chọn loại xe :</h2>
-            <ul>
-              <li class="type">
-                <input id="grabCar" type="radio" name="selector" >
-                <label for="grabCar">Grab Car</label>
-                <div class="check"></div>
-              </li>
-              <li class="type">
-                <input id="grabSUV" type="radio" name="selector" >
-                <label for="grabSUV">Grab SUV</label>
-                <div class="check"></div>
-              </li>
-              <li class="type">
-                <input id="grabBlack" type="radio" name="selector">
-                <label for="grabBlack">Grab Black</label>
-                <div class="check"></div>
-              </li>
-            </ul>
-            <div class="form-group">
-              <p>Nhập KM</p>
-              <input class="form-control" id="soKM">
-            </div>
-            <div class="form-group">
-              <p>Thời gian chờ / phút </p>
-              <input class="form-control" id="thoiGian" />
-            </div>
-          </div>
-          <div class="card-footer text-canter">
-            <h3>Tiền xe</h3>
-            <p id="tienXe">0$</p>
-            <button class="btn btn-success" id="btnTienXe">Tính tiền</button>
-            <button class="btn btn-success" id="btnIn">In hóa đơn</button>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <hr>
-      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <!--model js trc main-->
+   <script src="./models/SinhVien.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
